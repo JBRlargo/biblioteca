@@ -14,9 +14,12 @@ class CreateCategoriasLibrosTable extends Migration
     public function up()
     {
         Schema::create('categorias_libros', function (Blueprint $table) {
-            $table->foreign('idLibro')->references('isbn')->on('datos_libros');
-            $table->foreignId('idCategoria')->constrained('categorias');
+            $table->string('isbn', 13);
+            $table->unsignedBigInteger('idCategoria');
             $table->timestamps();
+
+            $table->foreign('isbn')->references('isbn')->on('datos_libros');
+            $table->foreign('idCategoria')->references('id')->on('categorias');
         });
     }
 

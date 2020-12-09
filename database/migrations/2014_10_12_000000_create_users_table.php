@@ -21,9 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('dni');
             $table->string('direccion');
-            $table->string('telefono', 9);
-            $table->string('codigo');
-            $table->enum('fullaccess', ['true', 'false'])->nullable();
+            $table->string('telefono', 15);
             $table->rememberToken();
             $table->timestamps();
         });

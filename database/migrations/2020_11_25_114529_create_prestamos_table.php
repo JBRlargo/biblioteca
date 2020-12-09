@@ -14,18 +14,17 @@ class CreatePrestamosTable extends Migration
      */
     public function up()
     {
-        $date = Carbon::now();
         Schema::create('prestamos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('idLibro');
-            $table->bigInteger('idUsuario');
-            $table->date('fechaEntregado')->default(Carbon::now());
-            $table->date('fechaDevolucion')->default(Cabron::now()->addWeek());
+            $table->unsignedBigInteger('idLibro');
+            $table->unsignedBigInteger('idUsuario');
+            $table->date('fechaEntregado');
+            $table->date('fechaDevolucion');
             $table->date('fechaDevuelto')->nullable();
             $table->timestamps();
 
-            $table->foreignId('idLibro')->constrained('libros');
-            $table->foreign('isbn')->references('isbn')->on('datos_libros');
+            $table->foreign('idLibro')->references('id')->on('libros');
+            $table->foreign('idUsuario')->references('id')->on('users');
         });
     }
 
