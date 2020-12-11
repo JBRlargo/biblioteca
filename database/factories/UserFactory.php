@@ -32,7 +32,7 @@ class UserFactory extends Factory
             'dni' => $this->faker->dni,
             'direccion' => $this->faker->address,
             'telefono' => $this->faker->tollFreeNumber,
-            'role' => $this->faker->randomElement(['admin', 'user', 'manager']),
+            'role' => $this->faker->randomElement(['admin', 'user']),
             'password' => Hash::make('1234'),
             'remember_token' => Str::random(10),
         ];
