@@ -1,0 +1,2 @@
+No he logrado borrar ningún libro, no sé por qué.
+Le envio un diagrama de la biblioteca y en esta misma carpeta hay un zip por si no funciona el de github
