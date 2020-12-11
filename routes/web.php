@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+//TODO Controlar middleware
+Route::resource('datosLibro', App\Http\Controllers\DatosLibroController::class);

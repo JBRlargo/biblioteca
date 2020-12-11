@@ -9,6 +9,7 @@ class DatosLibro extends Model
 {
     protected $table = 'datos_libros';
     public $timestamps = true;
+    protected $primaryKey = 'isbn';
 
     /**
     * The attributes that are mass assignable.
@@ -22,6 +23,6 @@ class DatosLibro extends Model
 
     //Relación de Uno a Muchos
     public function categorias(){
-        return $this->hasMany('App\Models\CategoriaLibro', 'isbn');
+        return $this->hasMany('App\Models\CategoriaLibro', 'isbn', 'isbn');
     }
 }

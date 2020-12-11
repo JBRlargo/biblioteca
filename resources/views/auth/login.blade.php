@@ -5,6 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <div>Puedes entrar con los usuarios "jpAdmin@gmail.com" o "jpUser@gmail.com". Cada uno podrá hacer cosas distintas</div>
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">

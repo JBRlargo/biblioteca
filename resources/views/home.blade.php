@@ -13,34 +13,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
-
-                    {{-- @can('isAdmin')
-                        <div class="btn btn-success btn-lg">
-                            <a style='color:red'>Tu tienes acceso como Administrador</a>
-                        </div>
-                    @elsecan('isUser')
-                        <div class="btn btn-primary btn-lg">
-                            <a style='color:yellow'>Tu tienes acceso como USUARIO</a>
-                        </div>
-                    @else
-                        <div class="btn btn-info btn-lg">
-                            <a style='color:brown'>Tu tienes acceso como USUARIO</a>
-                        </div>
-                    @endcan --}}
-                    <div>
-                        @if (count($libros) > 0)
-                            <table>
-                                @include('libros.mostrar')
-                            </table>
-                        @else
-                            <p>No hay libros que mostrar</p>
-                        @endif
-                    </div>
+                    
                 </div>
 
                 
+            </div>
+            <div>
+                @can('isAdmin')
+                    <a href="{{action('App\Http\Controllers\DatosLibroController@create')}}">Crear libro</a>
+                @endcan
+                @if (count($libros) > 0)
+                    <table>
+                        @include('libros.listado')
+                    </table>
+                @else
+                    <p>No hay libros que mostrar</p>
+                @endif
             </div>
         </div>
     </div>
